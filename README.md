@@ -45,6 +45,8 @@ npm run lint
 
 如果你觉得对你有所帮助，别忘了给我star，感谢！
 
+对了，这是原始链接：https://github.com/jirengu-inc/animating-resume
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
