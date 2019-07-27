@@ -17,15 +17,15 @@ export default {
   },
   data() {
     return {
-      interval: 40,
-      currentStyle: "",
-      enableHtml: false,
+      interval: 40, //动画间隔时间
+      currentStyle: "", // 页面左侧的内容
+      enableHtml: false, // 控制markdown转为Html的变量
       fullStyle: [
         `/*
 * Inspired by http://strml.net/
-* 大家好，我是方方
-* 二月了，好多公司都在招聘，你是不是也在准备简历呀。
-* 说做就做，我也来写一份简历！
+* 大家好，我是Irelia
+* 如果你也觉得这份简历看起来很炫酷，请继续看下去
+* 先让我们来看一下所有的效果吧！
 */
 /* 首先给所有元素加上过渡效果 */
 * {
@@ -137,10 +137,10 @@ html{
   },
   methods: {
     makeResume: async function() {
-      await this.progressivelyShowStyle(0);
+      await this.progressivelyShowStyle(0); // 平滑展示Style第一部分
       await this.progressivelyShowResume();
       await this.progressivelyShowStyle(1);
-      await this.showHtml();
+      await this.showHtml(); // markdown转为Html
       await this.progressivelyShowStyle(2);
     },
     showHtml: function() {
@@ -186,6 +186,7 @@ html{
         let interval = this.interval;
         let showResume = () => {
           if (this.currentMarkdown.length < length) {
+            // markdown内容赋值给currentMarkdown,然后传入ResumeEditor
             this.currentMarkdown = this.fullMarkdown.substring(
               0,
               this.currentMarkdown.length + 1
@@ -196,6 +197,7 @@ html{
             let prevChar = this.currentMarkdown[
               this.currentMarkdown.length - 2
             ];
+            // 如果之前的字符是回车，在$nextTick函数中调用goBottom函数
             if (prevChar === "\n" && this.$refs.resumeEditor) {
               this.$nextTick(() => this.$refs.resumeEditor.goBottom());
             }

@@ -8,14 +8,20 @@
 <script>
 import marked from "marked";
 export default {
+  // props: {
+  //   markdown: String,
+  //   enableHtml: Boolean
+  // },
   props: ["markdown", "enableHtml"],
   computed: {
     result: function() {
+      // 判断使用是否为markdown
       return this.enableHtml ? marked(this.markdown) : this.markdown;
     }
   },
   methods: {
     goBottom: function() {
+      // 设置内容垂直滚动距离为100000px
       this.$refs.container.scrollTop = 100000;
     },
     goTop: function() {

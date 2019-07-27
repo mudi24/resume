@@ -9,6 +9,9 @@
 import Prism from "prismjs";
 export default {
   name: "styleEditor",
+  // props: {
+  //   code: String
+  // },
   props: ["code"],
   computed: {
     codeInStyleTag: function() {
