@@ -22,7 +22,6 @@ export default {
       enableHtml: false, // 控制markdown转为Html的变量
       fullStyle: [
         `/*
-* Inspired by http://strml.net/
 * 大家好，我是Irelia
 * 如果你也觉得这份简历看起来很炫酷，请继续看下去
 * 先让我们来看一下所有的效果吧！
