@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "marked": "^0.3.19",
+    "marked": "^4.0.10",
     "prismjs": "^1.17.1",
     "vue": "^2.6.10"
   },
